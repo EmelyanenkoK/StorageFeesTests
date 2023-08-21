@@ -1,8 +1,6 @@
 #include "imports/stdlib.func";
+tuple get_c7() asm "c7 PUSH" "FIRST";
 
 () main(int msg_value, cell in_msg_full, slice in_msg_body) {
-    var a = [msg_value, pair_first(get_balance())];
-    dump_stack();
-    a~impure_touch();
     throw_unless(111, msg_value >= 50 * 1000000000);
 }
